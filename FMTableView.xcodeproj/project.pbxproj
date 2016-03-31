@@ -25,6 +25,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FF6CD74A1CAD5BA300D1905E /* FMTableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMTableViewManager.h; sourceTree = "<group>"; };
+		FF6CD74B1CAD5BA300D1905E /* FMTableViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMTableViewManager.m; sourceTree = "<group>"; };
 		FF6CF95D1C931ADB00A6879A /* libFMTableView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFMTableView.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6CF9601C931ADC00A6879A /* FMTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMTableView.h; sourceTree = "<group>"; };
 		FF6CF9621C931ADC00A6879A /* FMTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMTableView.m; sourceTree = "<group>"; };
@@ -62,6 +64,8 @@
 			children = (
 				FF6CF9601C931ADC00A6879A /* FMTableView.h */,
 				FF6CF9621C931ADC00A6879A /* FMTableView.m */,
+				FF6CD74A1CAD5BA300D1905E /* FMTableViewManager.h */,
+				FF6CD74B1CAD5BA300D1905E /* FMTableViewManager.m */,
 			);
 			path = FMTableView;
 			sourceTree = "<group>";
@@ -246,6 +250,7 @@
 				FF6CF9681C931ADC00A6879A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
