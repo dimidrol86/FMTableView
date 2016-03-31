@@ -1,0 +1,19 @@
+{
+  "name": "finch-react-tableview-ios",
+  "version": "1.0.0",
+  "description": "Finch Melrose React Native Table View iOS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimidrol86/finch-react-tableview-ios.git"
+  },
+  "author": "FM",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dimidrol86/finch-react-tableview-ios/issues"
+  },
+  "homepage": "https://github.com/dimidrol86/finch-react-tableview-ios#readme"
+}
