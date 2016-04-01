@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "finch-react-tableview-ios"
   s.version      = "0.0.1"
-  s.summary      = ""
+  s.summary      = "Finch & Melrose React Native UITableView iOS"
 
 
   #s.description  = <<-DESC
