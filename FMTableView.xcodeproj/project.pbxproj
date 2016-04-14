@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65AF2396F7FB99B75C4E497D /* libPods-FMTableView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A80DDE434AF04096D5E3294 /* libPods-FMTableView.a */; };
 		FF6CF9611C931ADC00A6879A /* FMTableView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF6CF9601C931ADC00A6879A /* FMTableView.h */; };
 		FF6CF9631C931ADC00A6879A /* FMTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6CF9621C931ADC00A6879A /* FMTableView.m */; };
 		FF72716C1CB5574C006C3FE8 /* FMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF72716B1CB5574C006C3FE8 /* FMTableViewCell.m */; };
+		FF8999F81CBFFE4C0030D1BB /* FMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8999F71CBFFE4C0030D1BB /* FMManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +28,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5DB782A1126E95198D198441 /* Pods-FMTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMTableView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FMTableView/Pods-FMTableView.debug.xcconfig"; sourceTree = "<group>"; };
+		8A80DDE434AF04096D5E3294 /* libPods-FMTableView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FMTableView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4F4FC268A24AC7E8F4D51AB /* Pods-FMTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMTableView.release.xcconfig"; path = "Pods/Target Support Files/Pods-FMTableView/Pods-FMTableView.release.xcconfig"; sourceTree = "<group>"; };
 		FF6CD74A1CAD5BA300D1905E /* FMTableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMTableViewManager.h; sourceTree = "<group>"; };
 		FF6CD74B1CAD5BA300D1905E /* FMTableViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMTableViewManager.m; sourceTree = "<group>"; };
 		FF6CF95D1C931ADB00A6879A /* libFMTableView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFMTableView.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,6 +38,8 @@
 		FF6CF9621C931ADC00A6879A /* FMTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMTableView.m; sourceTree = "<group>"; };
 		FF72716A1CB5574C006C3FE8 /* FMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMTableViewCell.h; sourceTree = "<group>"; };
 		FF72716B1CB5574C006C3FE8 /* FMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMTableViewCell.m; sourceTree = "<group>"; };
+		FF8999F61CBFFE4C0030D1BB /* FMManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMManager.h; sourceTree = "<group>"; };
+		FF8999F71CBFFE4C0030D1BB /* FMManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65AF2396F7FB99B75C4E497D /* libPods-FMTableView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D86AE709D504998D92C7138 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A80DDE434AF04096D5E3294 /* libPods-FMTableView.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD46E5F89B649B51E77DC87E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DB782A1126E95198D198441 /* Pods-FMTableView.debug.xcconfig */,
+				E4F4FC268A24AC7E8F4D51AB /* Pods-FMTableView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FF6CF9541C931ADB00A6879A = {
 			isa = PBXGroup;
 			children = (
 				FF6CF95F1C931ADB00A6879A /* FMTableView */,
 				FF6CF95E1C931ADB00A6879A /* Products */,
+				DD46E5F89B649B51E77DC87E /* Pods */,
+				0D86AE709D504998D92C7138 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +98,8 @@
 				FF6CD74B1CAD5BA300D1905E /* FMTableViewManager.m */,
 				FF72716A1CB5574C006C3FE8 /* FMTableViewCell.h */,
 				FF72716B1CB5574C006C3FE8 /* FMTableViewCell.m */,
+				FF8999F61CBFFE4C0030D1BB /* FMManager.h */,
+				FF8999F71CBFFE4C0030D1BB /* FMManager.m */,
 			);
 			path = FMTableView;
 			sourceTree = "<group>";
@@ -82,9 +111,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF6CF9661C931ADC00A6879A /* Build configuration list for PBXNativeTarget "FMTableView" */;
 			buildPhases = (
+				B9CEEF5532552AD51176AC4E /* Check Pods Manifest.lock */,
 				FF6CF9591C931ADB00A6879A /* Sources */,
 				FF6CF95A1C931ADB00A6879A /* Frameworks */,
 				FF6CF95B1C931ADB00A6879A /* CopyFiles */,
+				667FD6B610576BCDE9A916C0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,6 +157,39 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		667FD6B610576BCDE9A916C0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FMTableView/Pods-FMTableView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9CEEF5532552AD51176AC4E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FF6CF9591C931ADB00A6879A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -133,6 +197,7 @@
 			files = (
 				FF72716C1CB5574C006C3FE8 /* FMTableViewCell.m in Sources */,
 				FF6CF9631C931ADC00A6879A /* FMTableView.m in Sources */,
+				FF8999F81CBFFE4C0030D1BB /* FMManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +286,7 @@
 		};
 		FF6CF9671C931ADC00A6879A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DB782A1126E95198D198441 /* Pods-FMTableView.debug.xcconfig */;
 			buildSettings = {
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -230,6 +296,7 @@
 		};
 		FF6CF9681C931ADC00A6879A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4F4FC268A24AC7E8F4D51AB /* Pods-FMTableView.release.xcconfig */;
 			buildSettings = {
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

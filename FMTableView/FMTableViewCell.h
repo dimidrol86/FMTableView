@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RCTRootView.h"
 
 @interface FMTableViewCell : UITableViewCell
+
+-(void)configurateCell:(RCTBridge*)bridge;
 
 @end

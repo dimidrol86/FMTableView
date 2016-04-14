@@ -8,17 +8,33 @@
 
 #import "FMTableViewCell.h"
 
+@interface FMTableViewCell ()
+
+{
+    RCTRootView *_reactView;
+}
+
+@end
+
 @implementation FMTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
+
+-(void)configurateCell:(RCTBridge*)bridge{
+    
+    _reactView = [[RCTRootView alloc] initWithBridge:bridge moduleName:@"Cell" initialProperties:nil];
+    [self.contentView addSubview:_reactView];
+    _reactView.frame = self.contentView.frame;
+    
+    _reactView = nil;
+    
+}
+
 
 @end
