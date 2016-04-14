@@ -58,7 +58,7 @@ RCT_EXPORT_MODULE()
 -(UITableViewCell* )tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString * cellIdentificator = @"FMTableViewCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentificator];
+    FMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentificator];
     [cell configurateCell:[[FMManager sharedManager] bridge]];
     return cell;
 
