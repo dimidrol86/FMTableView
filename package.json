@@ -1,6 +1,6 @@
 {
   "name": "finch-react-tableview-ios",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Finch Melrose React Native Table View iOS",
   "main": "index.js",
   "scripts": {
