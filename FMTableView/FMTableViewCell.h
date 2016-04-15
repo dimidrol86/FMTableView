@@ -11,6 +11,9 @@
 
 @interface FMTableViewCell : UITableViewCell
 
--(void)configurateCell:(RCTBridge*)bridge;
+
+@property (nonatomic,strong,nullable) NSString *cellModule;
+
+-(void)configurateCell:(RCTBridge*)bridge module:(NSString*)cellModule;
 
 @end

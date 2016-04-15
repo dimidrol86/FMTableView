@@ -2,7 +2,21 @@
  * Created by dimidrol on 31.03.16.
  */
 
-import { requireNativeComponent } from 'react-native';
+import React, { requireNativeComponent } from 'react-native';
 
-module.exports = requireNativeComponent('FMTableView', null);
+
+class TableView extends React.Component {
+    render() {
+        return <FMTableView {...this.props} />;
+    }
+}
+
+TableView.propTypes = {
+
+    cellModule: React.PropTypes.string,
+};
+
+var FMTableView = requireNativeComponent('FMTableView', TableView);
+
+module.exports = TableView;
 
