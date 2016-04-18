@@ -6,15 +6,16 @@ import React, { requireNativeComponent } from 'react-native';
 
 
 class TableView extends React.Component {
+    static propTypes = {
+        cellModule: React.PropTypes.string
+    }
+
+
     render() {
-        return <FMTableView {...this.props} />;
+        console.log(this.props);
+        return <FMTableView {...this.props}/>;
     }
 }
-
-TableView.propTypes = {
-
-    cellModule: React.PropTypes.string,
-};
 
 var FMTableView = requireNativeComponent('FMTableView', TableView);
 

@@ -13,33 +13,33 @@
 
 @interface FMTableViewManager () <UITableViewDelegate,UITableViewDataSource>
 
-{
-    FMTableView *_tableView;
-}
-
 @end
 
 @implementation FMTableViewManager
 
 RCT_EXPORT_MODULE()
 
-RCT_EXPORT_VIEW_PROPERTY(cellModule, NSString)
 
 - (UIView *)view
 {
-    _tableView = [[FMTableView alloc] init];
+    FMTableView *tableView = [[FMTableView alloc] init];
     
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
+    tableView.delegate = self;
+    tableView.dataSource = self;
     
     static NSString * cellIdentificator = @"FMTableViewCell";
     
-    [_tableView registerClass:[FMTableViewCell class] forCellReuseIdentifier:cellIdentificator];
+    [tableView registerClass:[FMTableViewCell class] forCellReuseIdentifier:cellIdentificator];
     
-    return _tableView;
+    return tableView;
     
 }
 
+//RCT_EXPORT_VIEW_PROPERTY(cellModule, NSString)
+
+RCT_CUSTOM_VIEW_PROPERTY(cellModule, NSString*, FMTableView) {
+    [view setCellModule:[RCTConvert NSString:json]];
+}
 
 
 #pragma mark - UITableViewDelegate
@@ -63,9 +63,8 @@ RCT_EXPORT_VIEW_PROPERTY(cellModule, NSString)
     
     static NSString * cellIdentificator = @"FMTableViewCell";
     FMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentificator];
-    [cell configurateCell:[[FMManager sharedManager] bridge] module:_tableView.cellModule];
+    [cell configurateCell:[[FMManager sharedManager] bridge] module:[(FMTableView*)tableView cellModule]];
     return cell;
-    
     
 }
 
