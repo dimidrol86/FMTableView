@@ -13,6 +13,7 @@
 
 @interface FMTableViewManager () <UITableViewDelegate,UITableViewDataSource>
 
+
 @end
 
 @implementation FMTableViewManager
@@ -41,7 +42,6 @@ RCT_CUSTOM_VIEW_PROPERTY(cellModule, NSString*, FMTableView) {
     [view setCellModule:[RCTConvert NSString:json]];
 }
 
-
 #pragma mark - UITableViewDelegate
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -65,6 +65,15 @@ RCT_CUSTOM_VIEW_PROPERTY(cellModule, NSString*, FMTableView) {
     FMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentificator];
     [cell configurateCell:[[FMManager sharedManager] bridge] module:[(FMTableView*)tableView cellModule]];
     return cell;
+    
+}
+
+
+#pragma mark - UIScrollViewDelegate
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    
     
 }
 

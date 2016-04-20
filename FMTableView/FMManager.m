@@ -21,4 +21,13 @@
     return shared;
 }
 
+RCT_EXPORT_MODULE();
+
+RCT_EXPORT_METHOD(setTableSize:(NSInteger)count)
+{
+    NSLog(@"Вывод ячейка %d", count);
+}
+
+
+
 @end
