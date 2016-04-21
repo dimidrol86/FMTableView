@@ -10,6 +10,7 @@
 #import "FMTableView.h"
 #import "FMTableViewCell.h"
 #import "FMManager.h"
+#import "UIView+React.h"
 
 @interface FMTableViewManager () <UITableViewDelegate,UITableViewDataSource>
 
@@ -45,7 +46,8 @@ RCT_CUSTOM_VIEW_PROPERTY(cellModule, NSString*, FMTableView) {
 RCT_CUSTOM_VIEW_PROPERTY(model, NSDictionary*, FMTableView) {
     [view setModel:[RCTConvert NSDictionary:json]];
     
-    NSLog(@"%@",[RCTConvert NSDictionary:json]);
+    
+    //NSLog(@"%@",[RCTConvert NSDictionary:json]);
 }
 
 
@@ -56,6 +58,18 @@ RCT_CUSTOM_VIEW_PROPERTY(model, NSDictionary*, FMTableView) {
 }
 
 
+-(void)tableView:(FMTableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSDictionary *event = @{@"target": tableView.reactTag,
+                            @"data": @""};
+    
+    [[FMManager sharedManager].bridge.eventDispatcher sendInputEventWithName:@"change" body:event];
+    
+}
+
+
 #pragma mark - UITableViewDataSource
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -63,16 +77,32 @@ RCT_CUSTOM_VIEW_PROPERTY(model, NSDictionary*, FMTableView) {
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    
+    if ([(FMTableView*)tableView model]) {
+        NSArray *a = [(FMTableView*)tableView model][@"list"];
+        if([a isKindOfClass:[NSArray class]]){
+            return a.count;
+        }
+    }
+    
+    return 0;
 }
 
 -(UITableViewCell* )tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString * cellIdentificator = @"FMTableViewCell";
     FMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentificator];
-    [cell configurateCell:[[FMManager sharedManager] bridge] module:[(FMTableView*)tableView cellModule]];
-    return cell;
     
+    NSDictionary *d;
+    if ([(FMTableView*)tableView model]) {
+        NSArray *a = [(FMTableView*)tableView model][@"list"];
+        if([a isKindOfClass:[NSArray class]]){
+            d = a[indexPath.row];
+        }
+    }
+    
+    [cell configurateCell:[[FMManager sharedManager] bridge] module:[(FMTableView*)tableView cellModule] props:d];
+    return cell;
 }
 
 

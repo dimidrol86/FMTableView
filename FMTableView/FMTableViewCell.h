@@ -14,6 +14,6 @@
 
 @property (nonatomic,strong,nullable) NSString *cellModule;
 
--(void)configurateCell:(RCTBridge*)bridge module:(NSString*)cellModule;
+-(void)configurateCell:(RCTBridge*)bridge module:(NSString* _Nonnull)cellModule props:(NSDictionary * _Nullable)props;
 
 @end

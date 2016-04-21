@@ -10,6 +10,8 @@
 
 @implementation FMTableView
 
+@synthesize model=_model;
+
 -(instancetype)init{
     
     self = [super init];
@@ -19,6 +21,15 @@
     }
     
     return nil;
+}
+
+
+-(void)setModel:(NSDictionary *)model{
+    _model = model;
+    
+    [self reloadData];
+
+    
 }
 
 @end
