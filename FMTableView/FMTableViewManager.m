@@ -42,6 +42,13 @@ RCT_CUSTOM_VIEW_PROPERTY(cellModule, NSString*, FMTableView) {
     [view setCellModule:[RCTConvert NSString:json]];
 }
 
+RCT_CUSTOM_VIEW_PROPERTY(model, NSDictionary*, FMTableView) {
+    [view setModel:[RCTConvert NSDictionary:json]];
+    
+    NSLog(@"%@",[RCTConvert NSDictionary:json]);
+}
+
+
 #pragma mark - UITableViewDelegate
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

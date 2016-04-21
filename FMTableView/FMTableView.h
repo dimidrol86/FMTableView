@@ -12,5 +12,6 @@
 @interface FMTableView : UITableView
 
 @property (nonatomic,strong,nullable) NSString *cellModule;
+@property (nonatomic,strong,nullable) NSDictionary *model;
 
 @end
