@@ -7,6 +7,7 @@
 //
 
 #import "FMManager.h"
+#import "UIView+React.h"
 
 @implementation FMManager
 
@@ -25,7 +26,7 @@ RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(setTableSize:(NSInteger)count)
 {
-    NSLog(@"Вывод ячейка %d", count);
+    NSLog(@"Вывод ячейка %ld", (long)count);
 }
 
 

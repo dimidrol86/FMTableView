@@ -12,7 +12,7 @@
 #import "FMManager.h"
 #import "UIView+React.h"
 
-@interface FMTableViewManager () <UITableViewDelegate,UITableViewDataSource>
+@interface FMTableViewManager () <UITableViewDelegate,UITableViewDataSource,FMTableViewDelegate>
 
 
 @end
@@ -28,6 +28,7 @@ RCT_EXPORT_MODULE()
     
     tableView.delegate = self;
     tableView.dataSource = self;
+    tableView.fmDelegate = self;
     
     static NSString * cellIdentificator = @"FMTableViewCell";
     
@@ -45,9 +46,6 @@ RCT_CUSTOM_VIEW_PROPERTY(cellModule, NSString*, FMTableView) {
 
 RCT_CUSTOM_VIEW_PROPERTY(model, NSDictionary*, FMTableView) {
     [view setModel:[RCTConvert NSDictionary:json]];
-    
-    
-    //NSLog(@"%@",[RCTConvert NSDictionary:json]);
 }
 
 
@@ -61,12 +59,6 @@ RCT_CUSTOM_VIEW_PROPERTY(model, NSDictionary*, FMTableView) {
 -(void)tableView:(FMTableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    NSDictionary *event = @{@"target": tableView.reactTag,
-                            @"data": @""};
-    
-    [[FMManager sharedManager].bridge.eventDispatcher sendInputEventWithName:@"change" body:event];
-    
 }
 
 
@@ -114,6 +106,16 @@ RCT_CUSTOM_VIEW_PROPERTY(model, NSDictionary*, FMTableView) {
     
 }
 
+
+#pragma mark - FMTableViewDelegate 
+-(void)paginationLoad:(FMTableView*)tableView{
+
+    NSDictionary *event = @{@"target": tableView.reactTag,
+                            @"data": @""};
+        
+    [[FMManager sharedManager].bridge.eventDispatcher sendInputEventWithName:@"change" body:event];
+
+}
 
 
 @end

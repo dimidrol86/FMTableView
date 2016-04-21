@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RCTRootView.h"
 #import "RCTBridgeModule.h"
 
 @interface FMManager : NSObject <RCTBridgeModule>
