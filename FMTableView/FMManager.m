@@ -29,6 +29,15 @@ RCT_EXPORT_METHOD(setTableSize:(NSInteger)count)
     NSLog(@"Вывод ячейка %ld", (long)count);
 }
 
+-(NSString*) getCurrentLocale{
+    NSString *localeString=[[NSLocale currentLocale] localeIdentifier];
+    return localeString;
+}
+
+- (NSDictionary *)constantsToExport
+{
+    return @{ @"locale": [self getCurrentLocale] };
+}
 
 
 @end
