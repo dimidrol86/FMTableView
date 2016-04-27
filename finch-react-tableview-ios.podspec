@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "finch-react-tableview-ios"
-  s.version      = "0.0.6"
+  s.version      = "0.0.7"
   s.summary      = "Finch & Melrose React Native UITableView iOS"
 
 
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/dimidrol86/finch-react-tableview-ios.git", :tag => "v0.0.6" }
+  s.source       = { :git => "https://github.com/dimidrol86/finch-react-tableview-ios.git", :tag => "v0.0.7" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
